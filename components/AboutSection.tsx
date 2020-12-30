@@ -16,11 +16,21 @@ export default class AboutSection extends Component {
 
         <div className="wrap-wide">
           <div className="info-block">
-            <p>Ik ben Neo (zoals in The Matrix)</p>
+            <p>
+              Ik ben Neo (zoals in The Matrix). Al vanaf jongs af ben ik
+              geïntreseerd door computers en hoe ze werken. Dit is uit de hand
+              gelopen tot mijn skill.
+            </p>
             <div className="socials">
               <a
                 href="https://www.instagram.com/neo.the.one.1/"
-                className="btn"
+                target="_blank"
+                className="btn ig"
+              />
+              <a
+                href="https://github.com/neotje"
+                target="_blank"
+                className="btn git"
               />
             </div>
           </div>
