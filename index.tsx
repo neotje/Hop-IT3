@@ -34,8 +34,8 @@ class App extends Component {
             onClick={() => {
               this.scrollTo(this.aboutRef);
             }}
-            initial={{ y: "-100%", x: "-50%" }}
-            animate={{ y: "-110%", x: "-50%" }}
+            initial={{ y: "-110%", x: "-50%" }}
+            animate={{ y: "-90%", x: "-50%" }}
             transition={{
               type: "spring",
               delay: 3,

@@ -1,18 +1,29 @@
 .about {
-  min-height: 100vh;
+  float: left;
   width: 100%;
+  height: 100%;
   padding-top: 10rem;
+  position: relative;
+}
+
+.about .bottom {
+  background: #f1f1f2;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 130px;
 }
 
 .about .wrap {
   position: relative;
-  max-width: 1256px;
+  max-width: 1024px;
   margin: 0 auto;
-  padding: 0 5rem;
+  padding: 0 4rem;
 }
 
 .about .wrap h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: #1a237e;
   margin-bottom: 7rem;
 }
@@ -23,15 +34,65 @@
 
 .about .wrap-wide {
   position: relative;
-  max-width: 1256px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+.about .wrap-wide .img-block {
+  width: 50%;
+  float: left;
+  background: url("https://drive.google.com/uc?export=download&id=1IVmuksEZpiYpTpukMiouWcqTFpF8WW2c")
+    center center no-repeat;
+  background-size: contain;
+}
+
+.about .wrap-wide .img-block::before,
+.about .wrap-wide .info-block::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.about .wrap-wide .info-block {
+  width: 50%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.about .wrap-wide .info-block .block {
+  float: left;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 5rem;
+}
+
+/* age */
+.about .wrap-wide .info-block .age-block h2 {
+  color: #1a237e;
+  font-size: 3rem;
+  margin: 0 0 5px 0;
+}
+
+.about .wrap-wide .info-block .age-block h3 {
+  color: #00bfa5;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+
+  margin-bottom: 3rem;
+}
+
+/* info */
 .about .wrap-wide .info-block p {
   color: #1a237e;
   font-size: 1.1rem;
+  margin-bottom: 3rem;
+  line-height: 2rem;
 }
 
+/* socials */
 .about .socials .btn {
   width: 3rem;
   height: 3rem;

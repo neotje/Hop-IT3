@@ -23,6 +23,8 @@ body {
 
 section {
   position: relative;
+  float: left;
+  width: 100%;
 }
 
 .next-button {
@@ -30,7 +32,7 @@ section {
   left: 50%;
   top: 100%;
   transform: translate(-50%, -100%);
-  padding: 1rem;
+  padding: 2rem;
   color: #1a237e;
   transition: color cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
 }
