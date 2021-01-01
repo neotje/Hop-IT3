@@ -1,0 +1,27 @@
+.work {
+  width: 100%;
+  padding-top: 8rem;
+  min-height: 100vh;
+}
+
+.work .top {
+  background: #f1f1f2;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 250px;
+  z-index: -100;
+}
+
+.work .wrap h1 {
+  text-align: center;
+  color: #1a237e;
+  font-size: 3rem;
+}
+
+.work .wrap-wide {
+  position: relative;
+  max-width: 1296px;
+  margin: 0 auto;
+}

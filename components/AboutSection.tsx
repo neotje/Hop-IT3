@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { Component } from "react";
 import { motion, useMotionValue, useViewportScroll } from "framer-motion";
+import { util } from "../libs/util";
 
 import "./AboutSection.css";
 
@@ -9,10 +9,6 @@ function calculateAge(birthday): number {
   var ageDifMs = Date.now() - birthday;
   var ageDate = new Date(ageDifMs); // miliseconds from epoch
   return Math.abs(ageDate.getUTCFullYear() - 1970);
-}
-
-function clamp(n: number, min: number, max: number): number {
-  return Math.min(Math.max(n, min), max);
 }
 
 export default function AboutSection() {
@@ -24,18 +20,15 @@ export default function AboutSection() {
   const opacityMotion = useMotionValue(0);
 
   useEffect(() => {
-    function getInView(): void {
-      var scroll = document.scrollingElement.scrollTop;
-      var top = divEl.current.parentElement.offsetTop;
-      var height = divEl.current.parentElement.offsetHeight;
-      var bottom = top + height;
-      var progress = clamp((scroll - top + window.innerHeight) / height, 0, 1);
+    function onScroll(): void {
+      var progress = util.elemScrollProgress(divEl.current);
 
       xMotion.set((1 - progress) * xOffset);
-      opacityMotion.set(clamp(progress * 1.2, 0, 1));
+      opacityMotion.set(util.clamp(progress * 1.2, 0, 1));
     }
 
-    const unsub = scrollY.onChange(getInView);
+    onScroll();
+    const unsub = scrollY.onChange(onScroll);
 
     return unsub;
   });

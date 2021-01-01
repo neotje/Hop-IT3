@@ -7,6 +7,7 @@ import HomeSection from "./components/HomeSection";
 import NavBar from "./components/NavBar";
 
 import "./style.css";
+import WorkSection from "./components/WorkSection";
 
 export class App extends Component {
   homeRef: React.RefObject<HTMLElement>;
@@ -31,6 +32,7 @@ export class App extends Component {
         <NavBar index={this} />
         <section id="home" ref={this.homeRef}>
           <HomeSection />
+
           <motion.div
             className="next-button"
             onClick={() => {
@@ -64,7 +66,9 @@ export class App extends Component {
         <section id="about" ref={this.aboutRef}>
           <AboutSection />
         </section>
-        <section id="work" ref={this.workRef} />
+        <section id="work" ref={this.workRef}>
+          <WorkSection />
+        </section>
       </div>
     );
   }
