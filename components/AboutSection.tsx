@@ -11,11 +11,17 @@ function calculateAge(birthday): number {
   return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
-export default function AboutSection() {
-  const { scrollY } = useViewportScroll();
+function clamp(n: number, min: number, max: number): number {
+  return Math.min(Math.max(n, min), max);
+}
 
+export default function AboutSection() {
+  const xOffset = -200;
+
+  const { scrollY } = useViewportScroll();
   const divEl = useRef(null);
-  const opacity = useMotionValue(0);
+  const xMotion = useMotionValue(xOffset);
+  const opacityMotion = useMotionValue(0);
 
   useEffect(() => {
     function getInView(): void {
@@ -23,8 +29,10 @@ export default function AboutSection() {
       var top = divEl.current.parentElement.offsetTop;
       var height = divEl.current.parentElement.offsetHeight;
       var bottom = top + height;
+      var progress = clamp((scroll - top + window.innerHeight) / height, 0, 1);
 
-      opacity.set((scroll - top + window.innerHeight) / height);
+      xMotion.set((1 - progress) * xOffset);
+      opacityMotion.set(clamp(progress * 1.2, 0, 1));
     }
 
     const unsub = scrollY.onChange(getInView);
@@ -42,7 +50,10 @@ export default function AboutSection() {
       </div>
 
       <div className="wrap-wide">
-        <motion.div style={{ opacity }} className="img-block" />
+        <motion.div
+          style={{ x: xMotion, opacity: opacityMotion }}
+          className="img-block"
+        />
         <div className="info-block">
           <div className="block">
             <div className="age-block">

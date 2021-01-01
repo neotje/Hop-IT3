@@ -8,15 +8,17 @@ import NavBar from "./components/NavBar";
 
 import "./style.css";
 
-class App extends Component {
+export class App extends Component {
   homeRef: React.RefObject<HTMLElement>;
   aboutRef: React.RefObject<HTMLElement>;
+  workRef: React.RefObject<HTMLElement>;
 
   constructor(props) {
     super(props);
 
     this.homeRef = React.createRef();
     this.aboutRef = React.createRef();
+    this.workRef = React.createRef();
   }
 
   scrollTo(ref: React.RefObject<HTMLElement>) {
@@ -26,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar index={this} />
         <section id="home" ref={this.homeRef}>
           <HomeSection />
           <motion.div
@@ -47,12 +49,22 @@ class App extends Component {
               repeat: Infinity
             }}
           >
-            <span className="material-icons">expand_more</span>
+            <motion.span
+              className="material-icons"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                delay: 1
+              }}
+            >
+              expand_more
+            </motion.span>
           </motion.div>
         </section>
         <section id="about" ref={this.aboutRef}>
           <AboutSection />
         </section>
+        <section id="work" ref={this.workRef} />
       </div>
     );
   }

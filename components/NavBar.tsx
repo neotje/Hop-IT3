@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Component } from "react";
 import { motion, useAnimation, useMotionValue, Variants } from "framer-motion";
+import { App } from "../index";
 
 import "./NavBar.css";
 
@@ -52,7 +53,11 @@ const item: Variants = {
   }
 };
 
-export default function NavBar() {
+type NavBarProps = {
+  index: App;
+};
+
+export default function NavBar({ index }: NavBarProps) {
   var state = true;
   if (window.innerWidth < 700) state = false;
 
@@ -88,11 +93,17 @@ export default function NavBar() {
           <img className="logo" src="https://i.imgur.com/w87yLSc.png" />
         </li>
 
-        <motion.li variants={item} className="item">
+        <motion.li
+          variants={item}
+          className="item"
+          onClick={() => {
+            index.scrollTo(index.aboutRef);
+          }}
+        >
           Over mij
         </motion.li>
         <motion.li variants={item} className="item">
-          Projecten
+          Mijn werk
         </motion.li>
         <motion.li variants={item} className="item">
           Contact
