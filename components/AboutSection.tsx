@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Component } from "react";
-import { motion, useViewportScroll } from "framer-motion";
+import { motion, useMotionValue, useViewportScroll } from "framer-motion";
 
 import "./AboutSection.css";
 
@@ -15,6 +15,7 @@ export default function AboutSection() {
   const { scrollY } = useViewportScroll();
 
   const divEl = useRef(null);
+  const opacity = useMotionValue(0);
 
   useEffect(() => {
     function getInView(): void {
@@ -23,7 +24,7 @@ export default function AboutSection() {
       var height = divEl.current.parentElement.offsetHeight;
       var bottom = top + height;
 
-      console.log(scroll - top);
+      opacity.set((scroll - top + window.innerHeight) / height);
     }
 
     const unsub = scrollY.onChange(getInView);
@@ -41,7 +42,7 @@ export default function AboutSection() {
       </div>
 
       <div className="wrap-wide">
-        <div className="img-block" />
+        <motion.div style={{ opacity }} className="img-block" />
         <div className="info-block">
           <div className="block">
             <div className="age-block">
