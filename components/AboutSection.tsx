@@ -21,7 +21,7 @@ export default function AboutSection() {
 
   useEffect(() => {
     function onScroll(): void {
-      var progress = util.elemScrollProgress(divEl.current);
+      var progress = util.elemScrollProgress(divEl.current.parentElement);
 
       xMotion.set((1 - util.clamp(progress * 1.2, 0, 1)) * xOffset);
       opacityMotion.set(util.clamp(progress * 1.2, 0, 1));
