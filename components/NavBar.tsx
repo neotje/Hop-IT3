@@ -59,21 +59,34 @@ type NavBarProps = {
 
 export default function NavBar({ index }: NavBarProps) {
   var state = true;
-  if (window.innerWidth < 700) state = false;
+  var initial = "visible";
+  if (window.innerWidth < 700) {
+    state = false;
+    var initial = "hidden";
+  }
 
   const [show, setShowing] = useState(state);
-
   const controls = useAnimation();
 
   const toggle = () => {
     setShowing(!show);
 
-    if (show) {
+    if (!show) {
       controls.start("visible");
     } else {
       controls.start("hidden");
     }
   };
+
+  const onResize = () => {
+    if (window.innerWidth > 700) controls.set("visible");
+    if (window.innerWidth < 700) {
+      controls.set("hidden");
+      setShowing(false);
+    }
+  };
+
+  window.addEventListener("resize", onResize);
 
   return (
     <motion.nav
@@ -83,7 +96,7 @@ export default function NavBar({ index }: NavBarProps) {
       className="navbar"
     >
       <motion.ul
-        initial="visible"
+        initial={initial}
         //animate={controls}
         variants={list}
         animate={controls}
