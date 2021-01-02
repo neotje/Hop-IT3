@@ -23,7 +23,7 @@ export default function AboutSection() {
     function onScroll(): void {
       var progress = util.elemScrollProgress(divEl.current);
 
-      xMotion.set((1 - progress) * xOffset);
+      xMotion.set((1 - util.clamp(progress * 1.2, 0, 1)) * xOffset);
       opacityMotion.set(util.clamp(progress * 1.2, 0, 1));
     }
 
