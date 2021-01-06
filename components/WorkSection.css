@@ -30,21 +30,37 @@
   display: flex;
   align-items: center;
   position: relative;
+  margin-bottom: 4rem;
 }
 
+.work .wrap-wide .block.reverse {
+  flex-direction: row-reverse;
+}
+
+/* overlay */
 .work .wrap-wide .block .overlay {
   position: absolute;
   content: "";
   height: 100%;
   background: #fff;
   top: 0;
+}
+.work .wrap-wide .block.normal .overlay {
   right: 0;
 }
+.work .wrap-wide .block.reverse .overlay {
+  left: 0;
+}
 
+/* image */
 .work .wrap-wide .block img {
   max-width: 40%;
   max-height: 16vw;
-  margin-right: 2rem;
+}
+
+.work .wrap-wide .block .info {
+  width: 100%;
+  padding: 0 2rem;
 }
 
 .work .wrap-wide .block .info .title,

@@ -21,10 +21,16 @@ export default function WorkSection() {
   const firstEl = useRef(null);
   const firstElControls = useAnimation();
 
+  const secondEl = useRef(null);
+  const secondElControls = useAnimation();
+
   useEffect(() => {
     function onScroll(): void {
-      if (util.elemScrollProgress(firstEl.current) == 1) {
+      if (util.elemScrollProgress(firstEl.current, 100) == 1) {
         firstElControls.start(open);
+      }
+      if (util.elemScrollProgress(secondEl.current, 100) == 1) {
+        secondElControls.start(open);
       }
     }
 
@@ -41,7 +47,7 @@ export default function WorkSection() {
         <h1>Mijn Werk</h1>
       </div>
       <div className="wrap-wide">
-        <div className="block" ref={firstEl}>
+        <div className="block normal" ref={firstEl}>
           <img src="https://drive.google.com/uc?export=download&id=1z5GLirGP8AZuXftym0dLov1s0i8qYt5o" />
           <div className="info">
             <h2 className="title">Wie Wat Waar</h2>
@@ -56,6 +62,25 @@ export default function WorkSection() {
             className="overlay"
             initial={{ width: "100%" }}
             animate={firstElControls}
+          />
+        </div>
+
+        <div className="block reverse" ref={secondEl}>
+          <img src="https://drive.google.com/uc?export=download&id=1Qp3GhvSmTuc2MXrtrQ8MNxV-H5Ip2Rje" />
+          <div className="info">
+            <h2 className="title">Supermarktformules infographic</h2>
+            <h2 className="type">Website</h2>
+            <p className="description">
+              Overzichtelijk aantal winkels per formule per jaar zien.
+            </p>
+            <LinkBtn href="https://distrifooddynamics.nl/infographic-supermarktformules/">
+              Naar website
+            </LinkBtn>
+          </div>
+          <motion.div
+            className="overlay"
+            initial={{ width: "100%" }}
+            animate={secondElControls}
           />
         </div>
       </div>
