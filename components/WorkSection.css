@@ -25,3 +25,46 @@
   max-width: 1296px;
   margin: 0 auto;
 }
+
+.work .wrap-wide .block {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.work .wrap-wide .block .overlay {
+  position: absolute;
+  content: "";
+  height: 100%;
+  background: #fff;
+  top: 0;
+  right: 0;
+}
+
+.work .wrap-wide .block img {
+  max-width: 40%;
+  max-height: 16vw;
+  margin-right: 2rem;
+}
+
+.work .wrap-wide .block .info .title,
+.work .wrap-wide .block .info .type {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.work .wrap-wide .block .info .title,
+.work .wrap-wide .block .info .description {
+  color: #1a237e;
+}
+
+.work .wrap-wide .block .info .type {
+  color: #00bfa5;
+  margin-bottom: 2rem;
+}
+
+.work .wrap-wide .block .info .description {
+  margin: 0;
+  margin-bottom: 2rem;
+}

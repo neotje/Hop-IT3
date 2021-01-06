@@ -1,0 +1,27 @@
+.link-btn {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  float: left;
+  padding: 0.5rem;
+  color: #191a1e;
+  color: #1a237e;
+  transition: all 0.3s ease-in;
+  opacity: 0.6;
+}
+
+.link-btn:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.link-btn .material-icons {
+  padding-right: 1rem;
+  transition: all 0.3s ease-in;
+  transform-origin: 12px 12px;
+  transform-style: preserve-3d;
+}
+
+.link-btn:hover .material-icons {
+  transform: rotate(-45deg);
+}

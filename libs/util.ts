@@ -3,10 +3,10 @@ function clamp(n, min, max): number {
 }
 function elemScrollProgress(elem): number {
   var scroll = document.scrollingElement.scrollTop;
-  var top = elem.offsetTop;
+  var top = elem.getBoundingClientRect().top;
   var height = elem.offsetHeight;
   var bottom = top + height;
-  return clamp((scroll - top + window.innerHeight) / height, 0, 1);
+  return clamp((scroll - top) / (top + height), 0, 1);
 }
 
 export const util = {
