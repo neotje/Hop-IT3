@@ -107,7 +107,12 @@ export default function NavBar({ index }: NavBarProps) {
         animate={controls}
         className="menu"
       >
-        <li className="logo">
+        <li
+          className="logo"
+          onClick={() => {
+            document.scrollingElement.scrollTo(0, 0);
+          }}
+        >
           <img className="logo" src="https://i.imgur.com/w87yLSc.png" />
         </li>
 

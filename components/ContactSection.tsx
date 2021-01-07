@@ -10,12 +10,14 @@ export default class ContactSection extends Component {
       <div className="contact">
         <div className="wrap-wide">
           <div className="info">
-            <h1>Contact<span>:</span></h1>
-            <h2>contactgegevens</h2>
+            <h1>
+              Contact<span>:</span>
+            </h1>
+            <h2>Contactgegevens</h2>
             <p>neo@hopjes.net</p>
             <p>+31 6 39775282</p>
 
-            <h2>bedrijfsgegevens</h2>
+            <h2>Bedrijfsgegevens</h2>
             <p>KvK: 76729176</p>
             <p>BTW: NL003129917B08</p>
           </div>
