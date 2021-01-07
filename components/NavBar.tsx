@@ -111,6 +111,7 @@ export default function NavBar({ index }: NavBarProps) {
           className="item"
           onClick={() => {
             index.scrollTo(index.aboutRef);
+            toggle();
           }}
         >
           Over mij
@@ -120,6 +121,7 @@ export default function NavBar({ index }: NavBarProps) {
           className="item"
           onClick={() => {
             index.scrollTo(index.workRef);
+            toggle();
           }}
         >
           Mijn werk

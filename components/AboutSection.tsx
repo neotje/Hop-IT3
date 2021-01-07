@@ -56,7 +56,7 @@ export default function AboutSection() {
             <p>
               Ik ben Neo (zoals in The Matrix). Al vanaf jongs af aan ben ik
               geïntreseerd in computers. Dit is uit de hand gelopen tot mijn
-              skill.
+              werk.
             </p>
             <div className="socials">
               <a

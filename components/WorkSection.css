@@ -54,13 +54,17 @@
 
 /* image */
 .work .wrap-wide .block img {
-  max-width: 40%;
-  max-height: 16vw;
+  max-width: 36%;
 }
 
 .work .wrap-wide .block .info {
   width: 100%;
   padding: 0 2rem;
+}
+
+/* info block */
+.work .wrap-wide .block .info .title {
+  word-wrap: break-word;
 }
 
 .work .wrap-wide .block .info .title,
@@ -83,4 +87,17 @@
 .work .wrap-wide .block .info .description {
   margin: 0;
   margin-bottom: 2rem;
+}
+
+/* mobile */
+@media only screen and (max-width: 700px) {
+  .work .wrap-wide .block {
+    flex-direction: column !important;
+  }
+
+  .work .wrap-wide .block img {
+    max-width: 100vw;
+    width: 400px;
+    margin: 0;
+  }
 }
