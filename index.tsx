@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import AboutSection from "./components/AboutSection";
 import HomeSection from "./components/HomeSection";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/navbar/NavBar";
 
 import "./style.css";
 import WorkSection from "./components/WorkSection";
