@@ -18,19 +18,16 @@ const open = {
 export default function WorkSection() {
   const { scrollY } = useViewportScroll();
 
-  const firstEl = useRef(null);
-  const firstElControls = useAnimation();
+  const elements = [useRef(null), useRef(null), useRef(null)];
 
-  const secondEl = useRef(null);
-  const secondElControls = useAnimation();
+  const controls = [useAnimation(), useAnimation(), useAnimation()];
 
   useEffect(() => {
     function onScroll(): void {
-      if (util.elemScrollProgress(firstEl.current, 100) == 1) {
-        firstElControls.start(open);
-      }
-      if (util.elemScrollProgress(secondEl.current, 100) == 1) {
-        secondElControls.start(open);
+      for (var i = 0; i < elements.length; i++) {
+        if (util.elemScrollProgress(elements[i].current, 200) == 1) {
+          controls[i].start(open);
+        }
       }
     }
 
@@ -47,7 +44,7 @@ export default function WorkSection() {
         <h1>Mijn Werk</h1>
       </div>
       <div className="wrap-wide">
-        <div className="block normal" ref={firstEl}>
+        <div className="block normal" ref={elements[0]}>
           <img src="https://drive.google.com/uc?export=download&id=1z5GLirGP8AZuXftym0dLov1s0i8qYt5o" />
           <div className="info">
             <h2 className="title">Wie Wat Waar</h2>
@@ -61,11 +58,11 @@ export default function WorkSection() {
           <motion.div
             className="overlay"
             initial={{ width: "100%" }}
-            animate={firstElControls}
+            animate={controls[0]}
           />
         </div>
 
-        <div className="block reverse" ref={secondEl}>
+        <div className="block reverse" ref={elements[1]}>
           <img src="https://drive.google.com/uc?export=download&id=1Qp3GhvSmTuc2MXrtrQ8MNxV-H5Ip2Rje" />
           <div className="info">
             <h2 className="title">Supermarktformules infographic</h2>
@@ -74,13 +71,32 @@ export default function WorkSection() {
               Overzichtelijk aantal winkels per formule per jaar zien.
             </p>
             <LinkBtn href="https://distrifooddynamics.nl/infographic-supermarktformules/">
-              Naar website
+              Naar distrifood
             </LinkBtn>
           </div>
           <motion.div
             className="overlay"
             initial={{ width: "100%" }}
-            animate={secondElControls}
+            animate={controls[1]}
+          />
+        </div>
+
+        <div className="block normal" ref={elements[2]}>
+          <img src="https://drive.google.com/uc?export=download&id=1CCL-z1z4h8b2NMilcKf1RkfZ-ZfilmXy" />
+          <div className="info">
+            <h2 className="title">Salarisnet rekentools</h2>
+            <h2 className="type">Website</h2>
+            <p className="description">
+              Meerdere tools die kosten kunnen berekenen: Bruto-nettoloon,
+              bijtelling lease auto, bijtelling fiets van de zaak, AOW-leeftijd,
+              Aflossingschema personeelsrekening en Verzuimpercentage.
+            </p>
+            <LinkBtn href="https://www.salarisnet.nl/">Naar Salarisnet</LinkBtn>
+          </div>
+          <motion.div
+            className="overlay"
+            initial={{ width: "100%" }}
+            animate={controls[2]}
           />
         </div>
       </div>

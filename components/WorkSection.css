@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 }
 
 .work .wrap-wide .block.reverse {
@@ -87,6 +87,7 @@
 .work .wrap-wide .block .info .description {
   margin: 0;
   margin-bottom: 2rem;
+  line-height: 1.3rem;
 }
 
 /* mobile */

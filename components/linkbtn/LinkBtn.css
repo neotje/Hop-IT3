@@ -9,6 +9,10 @@
   opacity: 0.6;
 }
 
+.link-btn:visited {
+  color: #4b168a;
+}
+
 .link-btn:hover {
   opacity: 1;
   transform: translateY(-5px);

@@ -69,12 +69,17 @@ export default function NavBar({ index }: NavBarProps) {
   const controls = useAnimation();
 
   const toggle = () => {
-    setShowing(!show);
+    if (window.innerWidth < 700) {
+      setShowing(!show);
 
-    if (!show) {
-      controls.start("visible");
+      if (!show) {
+        controls.start("visible");
+      } else {
+        controls.start("hidden");
+      }
     } else {
-      controls.start("hidden");
+      controls.set("visible");
+      setShowing(false);
     }
   };
 

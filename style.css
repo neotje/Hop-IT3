@@ -35,6 +35,10 @@ section {
   padding: 2rem;
   color: #1a237e;
   transition: color cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 .next-button:hover {
@@ -44,4 +48,8 @@ section {
 
 .next-button .material-icons {
   font-size: 3.5rem;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }

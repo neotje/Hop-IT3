@@ -51,7 +51,7 @@ export class App extends Component {
               repeat: Infinity
             }}
           >
-            <motion.span
+            <motion.a
               className="material-icons"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -60,7 +60,7 @@ export class App extends Component {
               }}
             >
               expand_more
-            </motion.span>
+            </motion.a>
           </motion.div>
         </section>
         <section id="about" ref={this.aboutRef}>
