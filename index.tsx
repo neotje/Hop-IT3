@@ -8,11 +8,13 @@ import NavBar from "./components/navbar/NavBar";
 
 import "./style.css";
 import WorkSection from "./components/WorkSection";
+import ContactSection from "./components/ContactSection";
 
 export class App extends Component {
   homeRef: React.RefObject<HTMLElement>;
   aboutRef: React.RefObject<HTMLElement>;
   workRef: React.RefObject<HTMLElement>;
+  contactRef: React.RefObject<HTMLElement>;
 
   constructor(props) {
     super(props);
@@ -20,6 +22,7 @@ export class App extends Component {
     this.homeRef = React.createRef();
     this.aboutRef = React.createRef();
     this.workRef = React.createRef();
+    this.contactRef = React.createRef();
   }
 
   scrollTo(ref: React.RefObject<HTMLElement>) {
@@ -68,6 +71,9 @@ export class App extends Component {
         </section>
         <section id="work" ref={this.workRef}>
           <WorkSection />
+        </section>
+        <section id="contact" ref={this.contactRef}>
+          <ContactSection />
         </section>
       </div>
     );

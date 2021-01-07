@@ -131,7 +131,14 @@ export default function NavBar({ index }: NavBarProps) {
         >
           Mijn werk
         </motion.li>
-        <motion.li variants={item} className="item">
+        <motion.li
+          variants={item}
+          className="item"
+          onClick={() => {
+            index.scrollTo(index.contactRef);
+            toggle();
+          }}
+        >
           Contact
         </motion.li>
 

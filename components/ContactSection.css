@@ -1,0 +1,25 @@
+.contact {
+  width: 100%;
+  padding: 8rem 0;
+}
+
+.contact .wrap-wide {
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.contact .wrap-wide .info h1 {
+  font-size: 3rem;
+  color: #1a237e;
+}
+
+.contact .wrap-wide .info h1 span {
+  color: #00bfa5;
+}
+
+.contact .wrap-wide .info h2 {
+  margin-top: 3rem;
+  font-size: 1.25rem;
+  color: #00bfa5;
+}
