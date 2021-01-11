@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Component } from "react";
-import { motion, useAnimation, useMotionValue, Variants } from "framer-motion";
-import { App } from "../index";
+import React, { useState } from "react";
+import { motion, useAnimation, Variants } from "framer-motion";
+import { App } from "../../index";
 
 import "./NavBar.css";
 
@@ -62,7 +61,7 @@ export default function NavBar({ index }: NavBarProps) {
   var initial = "visible";
   if (window.innerWidth < 700) {
     state = false;
-    var initial = "hidden";
+    initial = "hidden";
   }
 
   const [show, setShowing] = useState(state);
@@ -113,7 +112,7 @@ export default function NavBar({ index }: NavBarProps) {
             document.scrollingElement.scrollTo(0, 0);
           }}
         >
-          <img className="logo" src="https://i.imgur.com/w87yLSc.png" />
+          <img className="logo" src="images/logo.png" alt="logo"/>
         </li>
 
         <motion.li

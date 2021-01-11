@@ -1,6 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import { motion, useMotionValue, useViewportScroll } from "framer-motion";
-import { util } from "../libs/util";
+import React from "react";
 
 import "./LinkBtn.css";
 
@@ -11,7 +9,7 @@ type LinkBtnProps = {
 
 export default function LinkBtn({ children, href }: LinkBtnProps) {
   return (
-    <a href={href} className="link-btn" target="_blank">
+    <a href={href} className="link-btn" target="_blank" rel="noreferrer">
       <span className="material-icons">east</span>
       <div className="content">{children}</div>
     </a>

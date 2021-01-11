@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useMotionValue, useViewportScroll } from "framer-motion";
-import { util } from "../libs/util";
+import { util } from "../../libs/util";
 
 import "./Carousel.css";
 

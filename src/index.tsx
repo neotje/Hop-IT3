@@ -16,7 +16,7 @@ export class App extends Component {
   workRef: React.RefObject<HTMLElement>;
   contactRef: React.RefObject<HTMLElement>;
 
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     this.homeRef = React.createRef();

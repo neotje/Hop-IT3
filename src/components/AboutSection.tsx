@@ -1,10 +1,12 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect, useRef } from "react";
 import { motion, useMotionValue, useViewportScroll } from "framer-motion";
 import { util } from "../libs/util";
 
 import "./AboutSection.css";
 
-function calculateAge(birthday): number {
+function calculateAge(birthday: any): number {
   // birthday is a date
   var ageDifMs = Date.now() - birthday;
   var ageDate = new Date(ageDifMs); // miliseconds from epoch
@@ -21,7 +23,7 @@ export default function AboutSection() {
 
   useEffect(() => {
     function onScroll(): void {
-      var progress = util.elemScrollProgress(divEl.current.parentElement);
+      var progress = util.elemScrollProgress(divEl.current.parentElement!);
 
       xMotion.set((1 - util.clamp(progress * 1.2, 0, 1)) * xOffset);
       opacityMotion.set(util.clamp(progress * 1.2, 0, 1));

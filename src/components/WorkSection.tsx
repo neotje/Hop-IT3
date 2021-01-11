@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import {
   motion,
   useAnimation,
-  useMotionValue,
   useViewportScroll
 } from "framer-motion";
 import { util } from "../libs/util";
@@ -25,7 +24,7 @@ export default function WorkSection() {
   useEffect(() => {
     function onScroll(): void {
       for (var i = 0; i < elements.length; i++) {
-        if (util.elemScrollProgress(elements[i].current, 200) == 1) {
+        if (util.elemScrollProgress(elements[i].current, 200) === 1) {
           controls[i].start(open);
         }
       }
@@ -45,7 +44,7 @@ export default function WorkSection() {
       </div>
       <div className="wrap-wide">
         <div className="block normal" ref={elements[0]}>
-          <img src="https://drive.google.com/uc?export=download&id=1z5GLirGP8AZuXftym0dLov1s0i8qYt5o" />
+          <img src="images/macbook-www.png" alt=""/>
           <div className="info">
             <h2 className="title">Wie Wat Waar</h2>
             <h2 className="type">Website</h2>
@@ -63,7 +62,7 @@ export default function WorkSection() {
         </div>
 
         <div className="block reverse" ref={elements[1]}>
-          <img src="https://drive.google.com/uc?export=download&id=1Qp3GhvSmTuc2MXrtrQ8MNxV-H5Ip2Rje" />
+          <img src="images/macbook-infographic.png" alt=""/>
           <div className="info">
             <h2 className="title">Supermarktformules infographic</h2>
             <h2 className="type">Website</h2>
@@ -82,7 +81,7 @@ export default function WorkSection() {
         </div>
 
         <div className="block normal" ref={elements[2]}>
-          <img src="https://drive.google.com/uc?export=download&id=1CCL-z1z4h8b2NMilcKf1RkfZ-ZfilmXy" />
+          <img src="images/macbook-slarisnet.png" alt=""/>
           <div className="info">
             <h2 className="title">Salarisnet rekentools</h2>
             <h2 className="type">Website</h2>
