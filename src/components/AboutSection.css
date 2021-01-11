@@ -105,13 +105,13 @@
 }
 
 .about .socials .ig {
-  background: url("https://drive.google.com/uc?export=download&id=1jlgqiwULh7g0SPGxVFBqUdyGsr-3kitd")
+  background: url("../images/instagram.svg")
     center center no-repeat;
   background-size: 1.75rem;
 }
 
 .about .socials .git {
-  background: url("https://drive.google.com/uc?export=download&id=1mH2rYWz4AutFt0QitPCl5qQnI44bD8LP")
+  background: url("../images/github.svg")
     center center no-repeat;
   background-size: 1.75rem;
 }

@@ -3,6 +3,7 @@ import { motion, useAnimation, Variants } from "framer-motion";
 import { App } from "../../index";
 
 import "./NavBar.css";
+import logo from "../../images/logo.png";
 
 const list: Variants = {
   visible: {
@@ -112,7 +113,7 @@ export default function NavBar({ index }: NavBarProps) {
             document.scrollingElement.scrollTo(0, 0);
           }}
         >
-          <img className="logo" src="images/logo.png" alt="logo"/>
+          <img className="logo" src={logo} alt="logo"/>
         </li>
 
         <motion.li

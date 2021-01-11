@@ -7,7 +7,11 @@ import {
 import { util } from "../libs/util";
 import LinkBtn from "./linkbtn/LinkBtn";
 
+// styling
 import "./WorkSection.css";
+import www from '../images/macbook-www.png';
+import salarisnet from '../images/macbook-slarisnet.png';
+import infographic from '../images/macbook-slarisnet.png';
 
 const open = {
   width: 0,
@@ -44,7 +48,7 @@ export default function WorkSection() {
       </div>
       <div className="wrap-wide">
         <div className="block normal" ref={elements[0]}>
-          <img src="images/macbook-www.png" alt=""/>
+          <img src={www} alt=""/>
           <div className="info">
             <h2 className="title">Wie Wat Waar</h2>
             <h2 className="type">Website</h2>
@@ -62,7 +66,7 @@ export default function WorkSection() {
         </div>
 
         <div className="block reverse" ref={elements[1]}>
-          <img src="images/macbook-infographic.png" alt=""/>
+          <img src={infographic} alt=""/>
           <div className="info">
             <h2 className="title">Supermarktformules infographic</h2>
             <h2 className="type">Website</h2>
@@ -81,7 +85,7 @@ export default function WorkSection() {
         </div>
 
         <div className="block normal" ref={elements[2]}>
-          <img src="images/macbook-slarisnet.png" alt=""/>
+          <img src={salarisnet} alt=""/>
           <div className="info">
             <h2 className="title">Salarisnet rekentools</h2>
             <h2 className="type">Website</h2>
